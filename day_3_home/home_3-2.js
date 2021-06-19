@@ -14,13 +14,13 @@ async function fetchdata() {
 
 function addFildYearSalary(row) {
     row.yearsalary = row.salary * 12;
-    console.log(row);
+    // console.log(row);
 }
 
 function addFildNextSalary(row) {
     let salary = row.salary
     row.nextsalary = calculateSalary(salary, 3);
-    console.log(row, 'this is new employyee');
+    // console.log(row, 'this is new employyee');
 }
 
 function calculateSalary(salary, year) {
@@ -62,7 +62,9 @@ $(document).ready(async function () {
     }
 
     let employees = [];
-    employees = employeeData;
+    employees = [...employeeData];
+    employees[0] = { id: 1111, frist: 'New', lastname: "Narunkorn", company: "Wali Disney", salary: 20000 }
+    employees[4] = { id: 4444, frist: 'New', lastname: "Narunkorn", company: "Wali Disney", salary: 20000 }
     // let employees = JSON.parse(JSON.stringify(employeeData));
     let newheader = "<tr>"
     let newbody = ""
@@ -92,7 +94,7 @@ $(document).ready(async function () {
                         nextsalarylist += `<li>${list}</li>`
                     }
                     nextsalarylist += "</ol>"
-                    console.log(list, 'ttt')
+                    // console.log(list, 'ttt')
                     showNextsalaryList = nextsalarylist
                 } else {
                     showNextsalaryList = employees[rows][key];
@@ -102,11 +104,12 @@ $(document).ready(async function () {
             newbody = newbody + detail + "</tr>"
         }
     }
-
-
     $('#myemployees').append($(header));
     $('#myemployees').append($(body));
     $('#myNewemployees').append($(newheader));
     $('#myNewemployees').append($(newbody));
 
 });
+
+
+

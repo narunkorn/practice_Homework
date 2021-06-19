@@ -31,6 +31,8 @@ const peopleSalary = [
 ]
 
 $(document).ready(function () {
+    debugger;
+
 
     let header = "<tr>"
 

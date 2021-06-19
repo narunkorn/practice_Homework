@@ -56,6 +56,7 @@ $(document).ready(function () {
                     salaryList += `<li>${list}</li>`;
                 }
                 salaryList += "</ol>"
+                console.log(list, '333')
                 showdata = salaryList;
 
             } else {

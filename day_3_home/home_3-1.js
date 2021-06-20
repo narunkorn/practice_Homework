@@ -36,6 +36,12 @@ function calculateSalary(salary, year) {
     }
     return arr_salary;
 }
+function addAdditionalFields(employees) {
+    for (let index in employees) {
+        addYearSalary(employees[index]);
+        addNextSalary(employees[index]);
+    }
+}
 
 
 $(document).ready(async function () {
@@ -45,10 +51,7 @@ $(document).ready(async function () {
     let header = "<tr>"
     let body = ""
     if (employees !== null) {
-        for (let index in employees) {
-            addYearSalary(employees[index]);
-            addNextSalary(employees[index]);
-        }
+        addAdditionalFields(employees)
         console.log('This is employeeData')
         console.log(employeeData)
         console.log('This is employees')

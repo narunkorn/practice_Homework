@@ -4,7 +4,7 @@ const input3 = [1, 2, { a: 1, b: 2 }];
 const input4 = [1, 2, { a: 1, b: { c: 3, d: 4 } }];
 const input5 = [1, 2, [3]];
 const input6 = [1, 2, [3, [4]]];
-const input7 = [1, 2, [3], 4];
+// const input6 = 1;
 function cloneObj(obj) {
     if (typeof obj === "object") {
         if (Array.isArray(obj)) {
@@ -12,19 +12,19 @@ function cloneObj(obj) {
             for (let index in obj) {
                 if (Array.isArray(obj[index])) {
                     newArray[index] = [];
+                    // [1,2,[]]
+
                     for (let index2 in obj[index]) {
-                        if (Array.isArray(obj[index][index2])) {
-                            newArray[index][index2] = [];
-                            for (let index3 in obj[index][index2]) {
-                                newArray[index][index2].push(obj[index][index2][index3]);
-                            }
-                        } else {
-                            newArray[index].push(obj[index][index2]);
-                        }
+                        newArray.push(obj[index][index2]);
+                        // [1,2,[],3]
+                        newArray[index].push(obj[index][index2]);
+                        // [1,2,[3],3]
                     }
+
                 } else {
                     newArray.push(obj[index]);
                 }
+
             }
             return newArray;
         } else {
@@ -32,11 +32,14 @@ function cloneObj(obj) {
         }
     }
 }
-const newObj = cloneObj(input6);
+
+
+
+const newObj = cloneObj(input5);
 
 console.log("newObj", newObj);
-newObj[2][1][0] = 555;
-console.log("input1", input6);
+// newObj[2][1] = 555;
+console.log("input1", input5);
 console.log("newNewObj", newObj);
 
 

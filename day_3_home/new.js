@@ -19,10 +19,10 @@ function clone(input) {
         }
     } return output;
 }
-console.log("input", input4)
-let newinput = clone(input4);
+console.log("input", input3)
+let newinput = clone(input3);
 console.log("newinput", newinput);
-newinput[2].b.c = 200;
+newinput[2].b = 200;
 console.log("_______________________________")
-console.log("input", input4);
+console.log("input", input3);
 console.log("newinputedit", newinput);

@@ -10,48 +10,38 @@ function cloneObj(obj) {
             for (let index in obj) {
                 if (Array.isArray(obj[index])) {
                 } else if (typeof obj[index] === 'object') {
-                    let newobj = {};
+                    let newObj = {};
                     let keys = Object.keys(obj[index]);
-                    for (key of keys) {
+                    for (let key of keys) {
                         if (typeof obj[index][key] === 'object') {
-                            let newobj2 = {};
-                            let keys2 = Object.keys(obj[index][key]);
-                            for (key2 of keys2) {
-                                newobj2[key2] = obj[index][key][key2];
-                            }
-                            newobj[key] = newobj2;
+                            let newObj2 = {}
+                            let keys2 = Object.keys(obj[index][key])
+                            for (let key2 of keys2) {
+                                newObj2[key2] = obj[index][key][key2]
+                            } newObj[key] = newObj2
                         } else {
-                            newobj[key] = obj[index][key];
+                            newObj[key] = obj[index][key]
                         }
-                    }
-                    newArr.push(newobj);
+                    } newArr.push(newObj)
                 } else {
                     newArr.push(obj[index]);
                 }
-            }
-            return newArr;
+            } return newArr;
         } else {
-            if (typeof obj === 'object') {
-                let newObj = {}
-                let keys = Object.keys(obj)
-                for (key of keys) {
-                    newObj[key] = obj[key]
-                }
-                return newObj;
-            }
-            newArr.push(obj);
+            let newObj = {};
+            let keys = Object.keys(obj);
+            for (key of keys) {
+                newObj[key] = obj[key]
+            } return newObj;
         }
     }
 }
-
-
-
-const newObj = cloneObj(input4);
-console.log("input1", input4);
+const newObj = cloneObj(input3);
+console.log("input1", input3);
 console.log("newObj", newObj);
 console.log('-------------------------------')
-newObj[2].b.c = 555;
-console.log("input1", input4);
+newObj[2]['b'] = 555;
+console.log("input1", input3);
 console.log("newObj", newObj);
 
 

@@ -1,0 +1,28 @@
+
+.contrainner{
+    display: flex;
+    flex-direction: column;
+}    
+.headImg{
+    margin: 1rem;
+}
+.itemImg{
+    display: flex;
+    flex-wrap: wrap;
+    margin:1rem;
+    justify-content: center;
+}
+.item{
+    width: 40%;
+    height: 40%;
+    margin: 1rem;
+}
+
+
+@media (min-width: 576px) {
+    .itemImg{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+}
+}

@@ -16,7 +16,6 @@ $(document).ready(async function () {
     if (datas !== null) {
         for (let callum in datas[0]) {
             header = header + `<th>${callum}</th>`;
-
         }
         header = header + `<th>Detail</th>`;
         header = header + "</tr>";
@@ -37,7 +36,6 @@ $(document).ready(async function () {
                 } else {
                     detail = detail + `<td>${datas[rows][key]}</td>`;
                 }
-
             }
             detail = detail + `<td><button onclick=\"myFunctionView(${datas[rows].id})\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\">view</button></td>`
             body = body + detail + "</tr>";

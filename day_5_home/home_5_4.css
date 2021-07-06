@@ -20,6 +20,7 @@
     width: 20%;
     height: 60%; 
     margin-right: 1rem; 
+    
 }
 .button{
     display: flex;
@@ -38,6 +39,11 @@
     color: honeydew;
     width: 10%;
     border: hotpink;
+}
+.btn{
+    margin-left: 2rem;
+    width: 10%;
+    align-items: flex-start;
 }
 
 /* } */

@@ -20,22 +20,41 @@
             enim cupiditate et aut reiciendis necessitatibus unde odit ratione vero, obcaecati temporibus fugit minus
             iusto!</p>
         <div class="img">
-            <img class="headImg" src="city.jpg" />
+            <img class="headImg" id="bigImg" src="city.jpg" />
             <div class="itemImg">
+
+
                 <img class="item" src="city.jpg" />
-                <button class="item" style=" background:cyan"></button>
-                <button class="item" style=" background:chartreuse"></button>
-                <button class="item" style=" background:darkmagenta"></button>
+
+                <button class="btn" id="btn1" onclick="deleteData()">close</button>
+
+                <input type="file" accept="image/*" id="input1" onchange="upload(event,'showImg1')" class="item"
+                    style=" background:coral" />
+
+                <img class="item" id="showImg1" src="" onclick="showBigImg(this.src)" />
+
+
+
+                <!-- <input type="file" accept="image/*" id="input2" onchange="upload(event,'showImg2')" class="item"
+                    style=" background:url(camara.png)" />
+                <img class="item" id="showImg2" src="" />
+
+
+
+                <input type="file" accept="image/*" id="input3" onchange="upload(event,'showImg3')" class="item"
+                    style=" background:url(camara.png)" />
+                <img class="item" id="showImg3" src="" /> -->
+
+
+
             </div>
+
         </div>
+
         <div class="button">
             <button class="firstButton">บันทึกไว้ก่อน</button>
             <button class="secondButton">ต่อไป</button>
         </div>
-
-
-
-    </div>
 
 </body>
 

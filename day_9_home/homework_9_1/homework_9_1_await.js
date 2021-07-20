@@ -7,7 +7,6 @@ const readFile1 = () => {
         fs.readFile('robot/head.txt', 'utf8', (err, head) => {
             if (err) {
                 reject(err);
-                console.log('i am error', err);
             } else {
                 resolve(head);
             }
@@ -23,7 +22,6 @@ const readFile2 = () => {
             } else {
                 resolve(body);
             }
-
         });
     });
 }
@@ -49,36 +47,32 @@ const readFile4 = () => {
         });
     });
 }
-const writeFile = (robot) => {
+const writeFile = (head, body, leg, feet) => {
     return new Promise(function (resolve, reject) {
-        fs.writeFile('robot.txt', robot, 'utf8', (err) => {
+        let robot = head + '\r\n' + body + '\r\n' + leg + '\r\n' + feet + '\r\n';
+        fs.writeFile('robot8.txt', robot, 'utf8', (err) => {
             if (err) {
                 reject(err);
             } else {
-                resolve('ok kaaaa');
+                resolve();
             }
         });
     });
 }
+const drawRobot = async () => {
+    try {
+        let head = await readFile1();
+        let body = await readFile2();
+        let leg = await readFile3();
+        let feet = await readFile4();
+        await writeFile(head, body, leg, feet);
+        console.log('yesssss!!!')
+    } catch (err) {
+        console.error(err)
+    }
+}
+drawRobot();
 
-let robot = '';
-readFile1().then((head) => {
-    robot += head + '\r\n';
-    return readFile2();
-}).then((body) => {
-    robot += body + '\r\n';
-    return readFile3();
-}).then((leg) => {
-    robot += leg + '\r\n';
-    return readFile4();
-}).then((feet) => {
-    robot += feet + '\r\n';
-    return writeFile(robot);
-}).then((data) => {
-    console.log(data);
-}).catch((error) => {
-    console.error(error)
-});
 
 
 
